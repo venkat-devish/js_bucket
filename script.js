@@ -1,6 +1,5 @@
-function toggle() {
+function toggle(...args) {
     let searchIndex = -1;
-    let args = arguments;
     return function () {
         searchIndex += 1;
         let index = searchIndex % args.length;
