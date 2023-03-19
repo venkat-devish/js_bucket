@@ -1,21 +1,23 @@
-var searchIndex = -1;
 function toggle() {
-    var args = arguments;
+    let searchIndex = -1;
+    let args = arguments;
     return function () {
         searchIndex += 1;
-        var index = searchIndex % args.length;
+        let index = searchIndex % args.length;
         console.log(args[index]);
     };
 }
 
-// const onOff = toggle(1, 2, 3);
-// onOff();
-// onOff();
-// onOff();
-// onOff();
-// onOff();
-// onOff();
-// onOff();
+const onOff = toggle(1, 2, 3);
+onOff();
+onOff();
+onOff();
+onOff();
+onOff();
+onOff();
+onOff();
+
+console.log('------------------------------------------------')
 
 const greet = toggle('hello')
 greet();
