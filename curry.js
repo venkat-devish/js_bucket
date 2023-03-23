@@ -47,22 +47,39 @@ function reduceFn(args) {
     return args.reduce((a, b) => a + b, 0)
 }
 
-function multiCurry(...a) {
-    if (!a.length) return 0
-    return function (...b) {
-        let p1 = reduceFn(a);
-        let p2 = reduceFn(b)
-        if (b.length) return multiCurry(p1 + p2)
-        return p1
-    }
-}
+// function multiCurry(...a) {
+//     if (!a.length) return 0
+//     return function (...b) {
+//         let p1 = reduceFn(a);
+//         let p2 = reduceFn(b)
+//         if (b.length) return multiCurry(p1 + p2)
+//         return p1
+//     }
+// }
 
 
-const res = multiCurry(1, 2, 3, 4);
-const res2 = multiCurry(1)(2)(3)(4);
-const res3 = multiCurry(1, 2)(3, 4);
-const res4 = multiCurry(1, 2, 3)(4);
-const res5 = multiCurry(1)(2, 3, 4);
-const res6 = multiCurry();
+// const res = multiCurry(1, 2, 3, 4);
+// const res2 = multiCurry(1)(2)(3)(4);
+// const res3 = multiCurry(1, 2)(3, 4);
+// const res4 = multiCurry(1, 2, 3)(4);
+// const res5 = multiCurry(1)(2, 3, 4);
+// const res6 = multiCurry();
 
-console.log(res(), res2(), res3(), res4(), res5(), res6);
+// console.log(res(), res2(), res3(), res4(), res5(), res6);
+
+// function sum(a, b, c, d) {
+//     return a + b + c + d;
+// }
+
+// const curry = (fn) => {
+//     return function (...args) {
+//         console.log(args)
+//     }
+// }
+
+
+// let curriedSum = curry(sum);
+// curriedSum(1)(2, 3)(4)
+// console.log(curriedSum(1, 2, 3, 4, 5));
+// console.log(curriedSum(1)(2, 3)(4));
+// console.log(curriedSum(1)(2)(3)(4));
